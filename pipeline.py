@@ -54,7 +54,10 @@ def run_pipeline():
         bet365_lines = {'Failed':"True"}
         print("Failed to get Bet365 lines")
     '''
-
+    pb_lines = {}
+    fb_lines = {}
+    r_lines = {}
+    bet365_lines = {}
     try:
         print('Running aggregator...')
         html_output = aggregator.run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, bet365_lines)
