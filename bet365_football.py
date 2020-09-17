@@ -30,7 +30,7 @@ chrome_options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
-chrome_options.binary_location = ENV['GOOGLE_CHROME_PATH']
+chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
 
 def hasNumbers(inputString):
     if("49ers" in inputString):
@@ -75,7 +75,7 @@ teams_dict = {'HOU Texans': 'Houston Texans',
 base_url = 'https://mobile.nj.bet365.com'
 
 def get_lines():
-    driver = webdriver.Chrome(ENV['CHROMEDRIVER_PATH'], options=chrome_options)
+    driver = webdriver.Chrome(os.environ['CHROMEDRIVER_PATH'], options=chrome_options)
     #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options)
     driver.get(base_url)
 
