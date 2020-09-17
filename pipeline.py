@@ -47,17 +47,19 @@ def run_pipeline():
         r_lines = {'Failed':"True"}
         print(e)
         print("Failed to get R lines")
+    '''
     try:
         print("Scrapping Bet365...")
         bet365_lines = bet365_football.get_lines()
     except:
         bet365_lines = {'Failed':"True"}
         print("Failed to get Bet365 lines")
-    '''
+    
     pb_lines = {}
     fb_lines = {}
     r_lines = {}
-    bet365_lines = {}
+    print(dk_lines)
+    print(fd_lines)
     try:
         print('Running aggregator...')
         html_output = aggregator.run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, bet365_lines)
