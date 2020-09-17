@@ -57,7 +57,7 @@ def get_lines():
 
     master_list = {}
     for match in html:
-        soup = BeautifulSoup(match)
+        soup = BeautifulSoup(match, features="html.parser")
         tmp_str = (soup.get_text(separator="|")).split('|')[:-1]
         date = tmp_str[2].upper()
         if (date not in master_list.keys()):

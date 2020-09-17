@@ -54,7 +54,7 @@ def get_lines():
 
                 final_time =  time_convert.strftime('%b %d').upper()
         except ValueError:
-            final_time = "SEP 14"
+            final_time = date.today().strftime('%b %d').upper()
         #final_time = date_field
         final_dict[final_time] = {}
 

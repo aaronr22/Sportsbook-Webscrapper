@@ -43,7 +43,6 @@ def get_lines():
                 final_time =  time_convert.strftime('%b %d').upper()
         except ValueError as e:
             final_time = date.today().strftime('%b %d').upper()
-            print(final_time)
         if(final_time not in return_dict.keys()):
             return_dict[final_time] = {}
 

@@ -10,13 +10,14 @@ def similar_key(search_key, list_keys):
 def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, bet365_lines):
     out_dict = {}
     for date in fd_lines.keys():
-        print(date)
         fd_to_dk = {}
         out_dict[date] = {}
         #convert fd to draftkings name dict
         for fd_team in fd_lines[date].keys():
-            fd_to_dk[fd_team] = similar_key(fd_team, dk_lines[date].keys())[1]
-        
+            try:
+                fd_to_dk[fd_team] = similar_key(fd_team, dk_lines[date].keys())[1]
+            except Exception as e:
+                print(e)
             if(date in dk_lines.keys()):
                 try:
                     dk_val = dk_lines[date][fd_to_dk[fd_team]]
@@ -48,19 +49,19 @@ def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, be
             if(date in r_lines.keys()):
                 try:
                     r_val = r_lines[date][fd_team]
-                except: 
+                except Exception as e: 
+                    print(e)
                     r_val = 0
             else:
-                r_val = 0      
+                r_val = 0     
             if(date in bet365_lines.keys()):
                 try:
                     b365_val = bet365_lines[date][fd_team]
                 except: 
                     b365_val = 0
             else:
-                b365_val = 0                      
+                b365_val = 0                  
             out_dict[date][fd_team] = (fd_lines[date][fd_team], dk_val, pb_val, fb_val, wh_val, r_val, b365_val)
-
     final_dict = {}
     for date in out_dict.keys():
         final_dict[date] = {}
@@ -107,7 +108,6 @@ def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, be
                 tmp_list2.append([match[6][1][1],match[6][1][2],match[6][1][3]]) 
             final_dict[date][team][match[0][0][0]] = tmp_list1
             final_dict[date][team][match[0][1][0]] = tmp_list2
-
 
     tmp_str = "<table><tr><th>Date</th><th>Game</th><th>Team</th><th>Fanudel</th><th>Draftkings</th><th>Pointsbet</th><th>Foxbets</th><th>William Hill</th><th>Resorts</th><th>Bet365</th></tr>"
     for date in final_dict.keys():
