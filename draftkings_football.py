@@ -14,6 +14,9 @@ from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()  
 chrome_options.add_argument("--headless") 
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.binary_location = ENV['GOOGLE_CHROME_PATH']
 
 base_url = 'https://sportsbook.draftkings.com/leagues/football/3?category=game-lines&subcategory=game'
 
@@ -25,7 +28,8 @@ def get_game(tuple1, tuple2):
 
 #base_url = "https://sportsbook.draftkings.com/leagues/mma/2162?category=fight-lines&subcategory=moneyline" #ufc works
 def get_lines():
-    driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options)
+    driver = webdriver.Chrome(ENV['CHROMEDRIVER_PATH'], options=chrome_options)
+    #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options
     driver.get(base_url)
 
     driver.implicitly_wait(2) #waits for the json to load

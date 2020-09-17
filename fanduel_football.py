@@ -15,14 +15,17 @@ from datetime import date
 
 chrome_options = Options()  
 chrome_options.add_argument("--headless") 
-
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.binary_location = ENV['GOOGLE_CHROME_PATH']
 
 #url to the page we want to scrape
 base_url = 'https://sportsbook.fanduel.com/sports/navigation/6227.1/13348.3'
 #base_url = "https://sportsbook.fanduel.com/sports/navigation/7287.1/9886.3" #did not work for ufc
 
 def get_lines():
-    driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options)
+    driver = webdriver.Chrome(ENV['CHROMEDRIVER_PATH'], options=chrome_options)
+    #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options
     driver.get(base_url)
 
     driver.implicitly_wait(2) #waits for the json to load
