@@ -7,7 +7,7 @@ import williamhill_football
 import resorts_football 
 import bet365_football
 def run_pipeline():
-    '''
+    
     try:
         print("Scrapping PB...")
         pb_lines = pointsbet_football.get_lines()
@@ -20,7 +20,6 @@ def run_pipeline():
     except:
         fb_lines = {'Failed':"True"}
         print("Failed to get FB lines")
-    '''
     try:
         print("Scrapping Draftking...")
         dk_lines = draftkings_football.get_lines()
@@ -39,7 +38,7 @@ def run_pipeline():
     except:
         wh_lines = {'Failed':"True"}
         print("Failed to get WH lines")
-    '''
+    
     try:
         print("Scrapping Resort...")
         r_lines = resorts_football.get_lines()
@@ -47,7 +46,6 @@ def run_pipeline():
         r_lines = {'Failed':"True"}
         print(e)
         print("Failed to get R lines")
-    '''
     try:
         print("Scrapping Bet365...")
         bet365_lines = bet365_football.get_lines()
@@ -55,11 +53,6 @@ def run_pipeline():
         bet365_lines = {'Failed':"True"}
         print("Failed to get Bet365 lines")
     
-    pb_lines = {}
-    fb_lines = {}
-    r_lines = {}
-    print(dk_lines)
-    print(fd_lines)
     try:
         print('Running aggregator...')
         html_output = aggregator.run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, bet365_lines)
