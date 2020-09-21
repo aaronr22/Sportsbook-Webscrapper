@@ -7,7 +7,8 @@ class Result(db.Model):
     name = db.Column(db.String(), primary_key=True)
     lines = db.Column(db.String())
 
-    def __init__(self, lines):
+    def __init__(self, name, lines):
+        self.name = name
         self.lines = lines
 
     def __repr__(self):

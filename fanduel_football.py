@@ -49,16 +49,38 @@ def get_lines():
         if(final_time not in return_dict.keys()):
             return_dict[final_time] = {}
 
-        away_team = match.find_element_by_xpath(".//div[@class='eventTitle away']").text
-        home_team = match.find_element_by_xpath(".//div[@class='eventTitle home']").text
+        away_team = match.find_element_by_xpath(".//div[contains(@class, 'eventTitle away')]").text
+        home_team = match.find_element_by_xpath(".//div[contains(@class,'eventTitle home')]").text
 
-        lines = match.find_elements_by_xpath(".//div[@class='flex']")
-        lines.pop(0)
         away = [away_team]
         home = [home_team]
-        for i in range(0, len(lines)-1,2):
-            away.append(lines[i].text.replace('\n', ' '))
-            home.append(lines[i+1].text.replace('\n', ' '))
+
+        points = match.find_element_by_xpath(".//div[@class='market points']")
+        money = match.find_element_by_xpath(".//div[@class='market money']")
+        total = match.find_element_by_xpath(".//div[@class='market total']")
+
+        p_val = points.find_elements_by_xpath(".//div[@class='flex']")
+        m_val = money.find_elements_by_xpath(".//div[@class='flex']")
+        t_val = total.find_elements_by_xpath(".//div[@class='flex']")
+
+        if len(p_val) == 2:
+            home.append(p_val[1].text.replace('\n', ' '))
+            away.append(p_val[0].text.replace('\n', ' '))
+        else:
+            home.append(0)
+            away.append(0)
+        if len(m_val) == 2:
+            home.append(m_val[1].text.replace('\n', ' '))
+            away.append(m_val[0].text.replace('\n', ' '))
+        else:
+            home.append(0)
+            away.append(0)
+        if len(t_val) == 2:
+            home.append(t_val[1].text.replace('\n', ' '))
+            away.append(t_val[0].text.replace('\n', ' '))
+        else:
+            home.append(0)
+            away.append(0)
 
         return_dict[final_time][away_team + ' - ' + home_team] = (away, home)
     driver.close()

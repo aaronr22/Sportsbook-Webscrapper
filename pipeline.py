@@ -29,9 +29,9 @@ def run_pipeline():
     try:
         print("Scrapping Fanduel...")
         fd_lines = fanduel_football.get_lines()
-    except:
+    except Exception as e:
         fd_lines = {'Failed':"True"}
-        print("Failed to get FD lines")
+        print("Failed to get FD lines", e)
     try:
         print('Scrapping William Hill...')
         wh_lines = williamhill_football.run_wh()
@@ -56,8 +56,9 @@ def run_pipeline():
     try:
         print('Running aggregator...')
         html_output = aggregator.run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, bet365_lines)
+        print(html_output)
+        return html_output
     except Exception as e:
         print("Failed to aggregate lines...")
-
-    print(html_output)
-    return html_output
+        print(e)
+        return 'None'

@@ -17,7 +17,7 @@ def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, be
             try:
                 fd_to_dk[fd_team] = similar_key(fd_team, dk_lines[date].keys())[1]
             except Exception as e:
-                print(e)
+                print('20: ',e)
             if(date in dk_lines.keys()):
                 try:
                     dk_val = dk_lines[date][fd_to_dk[fd_team]]
@@ -62,32 +62,39 @@ def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, be
             else:
                 b365_val = 0                  
             out_dict[date][fd_team] = (fd_lines[date][fd_team], dk_val, pb_val, fb_val, wh_val, r_val, b365_val)
+    print('1')
     final_dict = {}
     for date in out_dict.keys():
         final_dict[date] = {}
         for team in out_dict[date]:
+            print('1.0')
             final_dict[date][team] = {}
             match = out_dict[date][team]
+            print(match)
             tmp_list1 = [[match[0][0][1], match[0][0][2], match[0][0][3]]]
             tmp_list2 = [[match[0][1][1], match[0][1][2], match[0][1][3]]]
+            print('1.1')
             if(match[1] == 0):
                 tmp_list1.append(0)
                 tmp_list2.append(0)
             else:
                 tmp_list1.append([match[1][0][1],match[1][0][3],match[1][0][2]])
                 tmp_list2.append([match[1][1][1],match[1][1][3],match[1][1][2]])
+                print('1.2')
             if(match[2] == 0):
                 tmp_list1.append(0)
                 tmp_list2.append(0)
             else:
                 tmp_list1.append([match[2][0][1],match[2][0][3],match[2][0][2]])
                 tmp_list2.append([match[2][1][1],match[2][1][3],match[2][1][2]])
+            print('1.3')
             if(match[3] == 0):
                 tmp_list1.append(0)
                 tmp_list2.append(0)
             else:
                 tmp_list1.append([match[3][0][1],match[3][0][2],match[3][0][3]])
                 tmp_list2.append([match[3][1][1],match[3][1][2],match[3][1][3]])
+            print('1.4')
             if(match[4] == 0):
                 tmp_list1.append(0)
                 tmp_list2.append(0)
@@ -108,7 +115,7 @@ def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, be
                 tmp_list2.append([match[6][1][1],match[6][1][2],match[6][1][3]]) 
             final_dict[date][team][match[0][0][0]] = tmp_list1
             final_dict[date][team][match[0][1][0]] = tmp_list2
-
+    print('2')
     tmp_str = "<table><tr><th>Date</th><th>Game</th><th>Team</th><th>Fanudel</th><th>Draftkings</th><th>Pointsbet</th><th>Foxbets</th><th>William Hill</th><th>Resorts</th><th>Bet365</th></tr>"
     for date in final_dict.keys():
         data = final_dict[date]
