@@ -81,12 +81,16 @@ def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, be
                 tmp_list1.append([match[1][0][1],match[1][0][3],match[1][0][2]])
                 tmp_list2.append([match[1][1][1],match[1][1][3],match[1][1][2]])
                 print('1.2')
-            if(match[2] == 0):
+            try:
+                if(match[2] == 0):
+                    tmp_list1.append(0)
+                    tmp_list2.append(0)
+                else:
+                    tmp_list1.append([match[2][0][1],match[2][0][3],match[2][0][2]])
+                    tmp_list2.append([match[2][1][1],match[2][1][3],match[2][1][2]])
+            except:
                 tmp_list1.append(0)
                 tmp_list2.append(0)
-            else:
-                tmp_list1.append([match[2][0][1],match[2][0][3],match[2][0][2]])
-                tmp_list2.append([match[2][1][1],match[2][1][3],match[2][1][2]])
             print('1.3')
             if(match[3] == 0):
                 tmp_list1.append(0)
