@@ -11,9 +11,9 @@ def run_pipeline():
     try:
         print("Scrapping PB...")
         pb_lines = pointsbet_football.get_lines()
-    except:
+    except Exception as e:
         pb_lines = {'Failed':"True"}
-        print("Failed to get PB lines")
+        print("Failed to get PB lines", e)
     try:
         print("Scrapping FoxBet...")
         fb_lines = foxbets_football.get_lines()
@@ -35,9 +35,9 @@ def run_pipeline():
     try:
         print('Scrapping William Hill...')
         wh_lines = williamhill_football.run_wh()
-    except:
+    except Exception as e:
         wh_lines = {'Failed':"True"}
-        print("Failed to get WH lines")
+        print("Failed to get WH lines: ", e )
     
     try:
         print("Scrapping Resort...")
@@ -49,9 +49,9 @@ def run_pipeline():
     try:
         print("Scrapping Bet365...")
         bet365_lines = bet365_football.get_lines()
-    except:
+    except Exception as e: 
         bet365_lines = {'Failed':"True"}
-        print("Failed to get Bet365 lines")
+        print("Failed to get Bet365 lines: ", e)
     
     try:
         print('Running aggregator...')
