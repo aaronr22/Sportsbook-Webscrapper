@@ -32,7 +32,7 @@ def get_lines():
     result_dict = {}
     matches = driver.find_elements_by_xpath(".//div[@data-test='event']")
     for match in matches:
-        days = match.find_element_by_xpath(".//div[@class='fij37bd']").text
+        days = match.find_element_by_xpath(".//div[@class='f1tiy9f2']").text
 
         if('d' in days):
             i = days.index('d')
