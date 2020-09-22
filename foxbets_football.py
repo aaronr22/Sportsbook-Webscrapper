@@ -29,7 +29,7 @@ def get_lines():
 
     #eventView eventView-table_tennis
 
-    matches = driver.find_elements_by_xpath("//section[@class='afEvt eventView compHeader eventView--embeddedHeaders' or @class='afEvt eventView'] ")
+    matches = driver.find_elements_by_xpath(".//section[contains(@class,'afEvt eventView')]")
     #match = matches[0]
     return_dict = {}
 
@@ -49,11 +49,12 @@ def get_lines():
         m1_lines = map(lambda x: x.text.replace('\n', ' '), m1_children)
         m2_lines = map(lambda x: x.text.replace('\n', ' '), m2_children)
 
-        match_name = match.find_element_by_xpath(".//a[@class='afEvt__link']").get_attribute("innerHTML")
-        match_name = match_name.replace('@', '-')
-        home = match_name[:match_name.index('-')-1]
-        away = match_name[match_name.index('-')+2:]
+        names = match.find_elements_by_xpath(".//span[@class='teamName']")
 
+        home = names[1].text
+        away = names[0].text
+
+        match_name = home + ' - ' + away
         away_out = [away] + list(m1_lines)
         home_out = [home] + list(m2_lines)
 
