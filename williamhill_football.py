@@ -16,9 +16,10 @@ from time import sleep
 
 chrome_options = Options()  
 chrome_options.add_argument("--headless") 
-chrome_options.add_argument("window-size=1920,1080")
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument("--window-size=1920,1080")
+chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
 
 #url to the page we want to scrape
@@ -49,7 +50,7 @@ def run_wh():
 
         # Calculate new scroll height and compare with last scroll height.
         new_height = driver.execute_script("return document.body.scrollHeight")
-        print(last_height)
+        
         if new_height == last_height:
 
             break

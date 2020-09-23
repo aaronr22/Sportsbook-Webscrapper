@@ -29,6 +29,7 @@ chrome_options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_
 #chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument('--no-sandbox')
 chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
 

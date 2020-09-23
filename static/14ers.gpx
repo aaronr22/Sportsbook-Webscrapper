@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx
+  version="1.0"
+  creator="14ers.com"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/0"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+<time>2012-01-03T17:16:04Z</time>
+<bounds minlat="37.122173000" minlon="-108.005219000" maxlat="40.254902000" maxlon="-105.044357000"/>
+<wpt lat="38.840542000" lon="-105.044357000">
+  <ele>0.000000</ele>
+  <name>Pikes Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Pikes+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptpike.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Pikes+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptpike.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="40.254902000" lon="-105.615738000">
+  <ele>0.000000</ele>
+  <name>Longs Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Longs+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlong.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Longs+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlong.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.588360000" lon="-105.643333000">
+  <ele>0.000000</ele>
+  <name>Mt. Evans</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Evans&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptevan.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Evans&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptevan.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.582638000" lon="-105.668610000">
+  <ele>0.000000</ele>
+  <name>Mt. Bierstadt</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Bierstadt&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptbier.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Bierstadt&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptbier.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.633820000" lon="-105.817520000">
+  <ele>0.000000</ele>
+  <name>Grays Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Grays+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptgray.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Grays+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptgray.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.642742000" lon="-105.821259000">
+  <ele>0.000000</ele>
+  <name>Torreys Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Grays+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pttorr.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Grays+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pttorr.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.009647000" lon="-106.861443000">
+  <ele>0.000000</ele>
+  <name>Castle Peak</name>
+  <cmt>&lt;A href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Castle+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcast.jpg&quot;&gt;&lt;/A&gt;</cmt>
+  <desc>&lt;A href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Castle+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcast.jpg&quot;&gt;&lt;/A&gt;</desc>
+</wpt>
+<wpt lat="39.015148000" lon="-106.863281000">
+  <ele>0.000000</ele>
+  <name>Conundrum Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Castle+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptconu.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Castle+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptconu.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.070713000" lon="-106.989113000">
+  <ele>0.000000</ele>
+  <name>Maroon Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Maroon+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptmaro.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Maroon+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptmaro.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.076077000" lon="-106.987267000">
+  <ele>0.000000</ele>
+  <name>North Maroon Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Maroon+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptnmar.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Maroon+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptnmar.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.150166000" lon="-107.083221000">
+  <ele>0.000000</ele>
+  <name>Capitol Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Capitol+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcapi.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Capitol+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcapi.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.118809000" lon="-107.066528000">
+  <ele>0.000000</ele>
+  <name>Snowmass Mountain</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Snowmass+Mountain&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsnow.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Snowmass+Mountain&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsnow.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.071545000" lon="-106.950188000">
+  <ele>0.000000</ele>
+  <name>Pyramid Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Pyramid+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptpyra.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Pyramid+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptpyra.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.397236000" lon="-106.106430000">
+  <ele>0.000000</ele>
+  <name>Quandary Peak</name>
+  <cmt>&lt;A href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Quandary+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptquan.jpg&quot;&gt;&lt;/A&gt;</cmt>
+  <desc>&lt;A href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Quandary+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptquan.jpg&quot;&gt;&lt;/A&gt;</desc>
+</wpt>
+<wpt lat="39.339542000" lon="-106.139946000">
+  <ele>0.000000</ele>
+  <name>Mt. Democrat</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Democrat&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptdemo.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Democrat&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptdemo.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.351391000" lon="-106.111404000">
+  <ele>0.000000</ele>
+  <name>Mt. Lincoln</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Lincoln&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlinc.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Lincoln&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlinc.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.335060000" lon="-106.107376000">
+  <ele>0.000000</ele>
+  <name>Mt. Bross</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Bross&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptbros.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Bross&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptbros.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.346844000" lon="-106.118576000">
+  <ele>0.000000</ele>
+  <name>Mt. Cameron</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Cameron&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcame.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Cameron&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcame.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.225006000" lon="-106.169945000">
+  <ele>0.000000</ele>
+  <name>Mt. Sherman</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Sherman&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsher.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Sherman&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsher.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.966972000" lon="-105.585304000">
+  <ele>0.000000</ele>
+  <name>Crestone Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Crestone+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcpea.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Crestone+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcpea.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.964737000" lon="-105.576683000">
+  <ele>0.000000</ele>
+  <name>Crestone Needle</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Crestone+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcnee.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Crestone+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcnee.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.976105000" lon="-105.555351000">
+  <ele>0.000000</ele>
+  <name>Humboldt Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Humboldt+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pthumb.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Humboldt+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pthumb.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.979759000" lon="-105.602562000">
+  <ele>0.000000</ele>
+  <name>Kit Carson Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Kit+Carson+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptkitc.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Kit+Carson+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptkitc.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.980267000" lon="-105.606766000">
+  <ele>0.000000</ele>
+  <name>Challenger Point</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Kit+Carson+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptchal.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Kit+Carson+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptchal.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.577473000" lon="-105.485443000">
+  <ele>0.000000</ele>
+  <name>Blanca Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Blanca+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptblan.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Blanca+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptblan.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.582508000" lon="-105.492569000">
+  <ele>0.000000</ele>
+  <name>Ellingwood Point</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Blanca+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptelli.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Blanca+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptelli.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.566624000" lon="-105.497162000">
+  <ele>0.000000</ele>
+  <name>Little Bear Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Little+Bear+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlitt.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Little+Bear+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlitt.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.583801000" lon="-105.444763000">
+  <ele>0.000000</ele>
+  <name>Mt. Lindsey</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Lindsey&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlind.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Lindsey&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlind.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.122173000" lon="-105.185593000">
+  <ele>0.000000</ele>
+  <name>Culebra Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Culebra+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcule.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Culebra+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcule.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.466713000" lon="-106.481766000">
+  <ele>0.000000</ele>
+  <name>Mt. of the Holy Cross</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+of+the+Holy+Cross&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptholy.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+of+the+Holy+Cross&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptholy.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.187298000" lon="-106.475548000">
+  <ele>0.000000</ele>
+  <name>Mt. Massive</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Massive&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptmass.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Massive&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptmass.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.117710000" lon="-106.445335000">
+  <ele>0.000000</ele>
+  <name>Mt. Elbert</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Elbert&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptelbe.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Elbert&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptelbe.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="39.029251000" lon="-106.473145000">
+  <ele>0.000000</ele>
+  <name>La Plata Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=La+Plata+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlapl.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=La+Plata+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptlapl.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.945423000" lon="-106.438126000">
+  <ele>0.000000</ele>
+  <name>Huron Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Huron+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pthuro.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Huron+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pthuro.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.947559000" lon="-106.378471000">
+  <ele>0.000000</ele>
+  <name>Missouri Mountain</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Missouri+Mountain&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptmiss.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Missouri+Mountain&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptmiss.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.960575000" lon="-106.360832000">
+  <ele>0.000000</ele>
+  <name>Mt. Belford</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Belford&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptbelf.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Belford&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptbelf.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.964680000" lon="-106.338432000">
+  <ele>0.000000</ele>
+  <name>Mt. Oxford</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Belford&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptoxfo.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Belford&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptoxfo.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.924328000" lon="-106.320618000">
+  <ele>0.000000</ele>
+  <name>Mt. Harvard</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Harvard&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptharv.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Harvard&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptharv.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.903957000" lon="-106.297485000">
+  <ele>0.000000</ele>
+  <name>Mt. Columbia</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Harvard&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcolu.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Harvard&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptcolu.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.844051000" lon="-106.313965000">
+  <ele>0.000000</ele>
+  <name>Mt. Yale</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Yale&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptyale.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Yale&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptyale.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.749062000" lon="-106.242432000">
+  <ele>0.000000</ele>
+  <name>Mt. Princeton</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Princeton&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptprin.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Princeton&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptprin.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.619083000" lon="-106.239296000">
+  <ele>0.000000</ele>
+  <name>Mt. Shavano</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Shavano&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptshav.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Shavano&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptshav.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.625622000" lon="-106.250710000">
+  <ele>0.000000</ele>
+  <name>Tabeguache Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Shavano&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pttabe.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Shavano&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pttabe.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.674088000" lon="-106.246201000">
+  <ele>0.000000</ele>
+  <name>Mt. Antero</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Antero&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptante.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Antero&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptante.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.003605000" lon="-107.792229000">
+  <ele>0.000000</ele>
+  <name>Mt. Sneffels</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Sneffels&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsnef.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Sneffels&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsnef.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.071507000" lon="-107.462166000">
+  <ele>0.000000</ele>
+  <name>Uncompahgre Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Uncompahgre+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptunco.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Uncompahgre+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptunco.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="38.060593000" lon="-107.510834000">
+  <ele>0.000000</ele>
+  <name>Wetterhorn Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Wetterhorn+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptwett.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Wetterhorn+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptwett.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.913021000" lon="-107.504478000">
+  <ele>0.000000</ele>
+  <name>Handies Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Handies+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pthand.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Handies+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pthand.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.922604000" lon="-107.425606000">
+  <ele>0.000000</ele>
+  <name>Sunshine Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Redcloud+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsuns.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Redcloud+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsuns.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.940880000" lon="-107.421654000">
+  <ele>0.000000</ele>
+  <name>Redcloud Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Redcloud+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptredc.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Redcloud+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptredc.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.839310000" lon="-107.991570000">
+  <ele>0.000000</ele>
+  <name>Mt. Wilson</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Wilson&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptmwil.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Wilson&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptmwil.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.859913000" lon="-107.984795000">
+  <ele>0.000000</ele>
+  <name>Wilson Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Wilson&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptwils.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Wilson&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptwils.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.839275000" lon="-108.005219000">
+  <ele>0.000000</ele>
+  <name>El Diente Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Wilson&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pteldi.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Wilson&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pteldi.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.621235000" lon="-107.591774000">
+  <ele>0.000000</ele>
+  <name>Windom Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Eolus&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptwind.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Eolus&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptwind.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.627285000" lon="-107.595894000">
+  <ele>0.000000</ele>
+  <name>Sunlight Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Eolus&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsunl.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Eolus&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsunl.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.625416000" lon="-107.620995000">
+  <ele>0.000000</ele>
+  <name>North Eolus</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Eolus&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptneol.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Eolus&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptneol.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.621948000" lon="-107.622498000">
+  <ele>0.000000</ele>
+  <name>Mt. Eolus</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Eolus&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pteolu.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=Mt.+Eolus&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/pteolu.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+<wpt lat="37.986897000" lon="-106.931389000">
+  <ele>0.000000</ele>
+  <name>San Luis Peak</name>
+  <cmt>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=San+Luis+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsanl.jpg&quot;&gt;&lt;/a&gt;</cmt>
+  <desc>&lt;a href=&quot;http://www.14ers.com/photos/peakmain.php?peak=San+Luis+Peak&quot;&gt;&lt;IMG src=&quot;http://www.14ers.com/images/pthumbs/ptsanl.jpg&quot;&gt;&lt;/a&gt;</desc>
+</wpt>
+</gpx>
