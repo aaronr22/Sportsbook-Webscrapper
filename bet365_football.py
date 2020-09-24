@@ -77,57 +77,62 @@ base_url = 'https://mobile.nj.bet365.com'
 
 def get_lines():
     driver = webdriver.Chrome(os.environ['CHROMEDRIVER_PATH'], options=chrome_options)
-    #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options)
-    driver.get(base_url)
+    try:
+        #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options)
+        driver.get(base_url)
 
-    driver.implicitly_wait(2) #waits for the json to load
-
-
-    football_element = driver.find_element_by_xpath(".//div[@class='crm-MarketSplash_Image crm-MarketSplash_Image-12 ']")
+        driver.implicitly_wait(2) #waits for the json to load
 
 
-
-    football_element.click()
-    sleep(2)
-
-    driver.find_element_by_xpath(".//div[contains(text(),'Lines')]").click()
-    sleep(2)
-
-    driver.find_element_by_xpath(".//span[contains(text(),'Game Lines')]").click()
-    #driver.implicitly_wait(3) 
-    sleep(2)
-
-    left_col = driver.find_element_by_xpath(".//div[contains(@class, 'cm-MarketCouponFixtureLabelAdvancedRowHeight sl-MarketCouponFixtureLabelBase gl-Market_General gl-Market_HasLabels gl-Market_PWidth-50 ')]")
-    line_cols = driver.find_elements_by_xpath(".//div[contains(@class, 'sl-MarketCouponAdvancedBase gl-Market_General gl-Market_PWidth-18 cm-MarketCouponAdvancedOddsDonBest2Col ')]")
-    mid_col = line_cols[0]
-    right_col = line_cols[1]
-
-    l_rows = left_col.find_elements_by_xpath(".//div[contains(@class, 'cm-ParticipantWithBookClosesDonBest_TeamName ') or contains(@class, 'gl-MarketColumnHeader sl-MarketHeaderLabel sl-MarketHeaderLabel_Date ')]")
-    m_rows = mid_col.find_elements_by_xpath(".//div[contains(@class, 'cm-ParticipantCenteredAndStackedDonBest gl-Participant_General ') or contains(@class, 'gl-MarketColumnHeader ')]")
-    r_rows = right_col.find_elements_by_xpath(".//div[contains(@class, 'cm-ParticipantOddsWithHandicapDonBest gl-Participant_General ') or contains(@class, 'gl-MarketColumnHeader ')]")
-
-    l_text = [x.text for x in l_rows]
-    m_text = [x.text for x in m_rows]
-    r_text = [x.text for x in r_rows]
-
-    zipped = list(zip(l_text, m_text, r_text))
-
-    t = 0
-    tmp_dict = {}
-    current_date = ''
-    for i in range(0,len(zipped)):
-        if(hasNumbers(zipped[t][0])):
-            current_date = zipped[t][0][4:].upper()
-            tmp_dict[current_date] = {}
-            t = t+1
-        else:
-            game_title = teams_dict[zipped[t][0]] + ' - ' + teams_dict[zipped[t+1][0]]
-            tmp_dict[current_date][game_title] = ((teams_dict[zipped[t][0]], zipped[t][1].replace('\n', ' '), 0 , zipped[t][2].replace('\n', ' ')),(teams_dict[zipped[t+1][0]], zipped[t+1][1].replace('\n', ' '), 0 , zipped[t+1][2].replace('\n', ' ')))
-            t = t+2
-        if(t == len(zipped)):
-            break
+        football_element = driver.find_element_by_xpath(".//div[@class='crm-MarketSplash_Image crm-MarketSplash_Image-12 ']")
 
 
-    driver.close()
-    driver.quit()
-    return tmp_dict
+
+        football_element.click()
+        sleep(2)
+
+        driver.find_element_by_xpath(".//div[contains(text(),'Lines')]").click()
+        sleep(2)
+
+        driver.find_element_by_xpath(".//span[contains(text(),'Game Lines')]").click()
+        #driver.implicitly_wait(3) 
+        sleep(2)
+
+        left_col = driver.find_element_by_xpath(".//div[contains(@class, 'cm-MarketCouponFixtureLabelAdvancedRowHeight sl-MarketCouponFixtureLabelBase gl-Market_General gl-Market_HasLabels gl-Market_PWidth-50 ')]")
+        line_cols = driver.find_elements_by_xpath(".//div[contains(@class, 'sl-MarketCouponAdvancedBase gl-Market_General gl-Market_PWidth-18 cm-MarketCouponAdvancedOddsDonBest2Col ')]")
+        mid_col = line_cols[0]
+        right_col = line_cols[1]
+
+        l_rows = left_col.find_elements_by_xpath(".//div[contains(@class, 'cm-ParticipantWithBookClosesDonBest_TeamName ') or contains(@class, 'gl-MarketColumnHeader sl-MarketHeaderLabel sl-MarketHeaderLabel_Date ')]")
+        m_rows = mid_col.find_elements_by_xpath(".//div[contains(@class, 'cm-ParticipantCenteredAndStackedDonBest gl-Participant_General ') or contains(@class, 'gl-MarketColumnHeader ')]")
+        r_rows = right_col.find_elements_by_xpath(".//div[contains(@class, 'cm-ParticipantOddsWithHandicapDonBest gl-Participant_General ') or contains(@class, 'gl-MarketColumnHeader ')]")
+
+        l_text = [x.text for x in l_rows]
+        m_text = [x.text for x in m_rows]
+        r_text = [x.text for x in r_rows]
+
+        zipped = list(zip(l_text, m_text, r_text))
+
+        t = 0
+        tmp_dict = {}
+        current_date = ''
+        for i in range(0,len(zipped)):
+            if(hasNumbers(zipped[t][0])):
+                current_date = zipped[t][0][4:].upper()
+                tmp_dict[current_date] = {}
+                t = t+1
+            else:
+                game_title = teams_dict[zipped[t][0]] + ' - ' + teams_dict[zipped[t+1][0]]
+                tmp_dict[current_date][game_title] = ((teams_dict[zipped[t][0]], zipped[t][1].replace('\n', ' '), 0 , zipped[t][2].replace('\n', ' ')),(teams_dict[zipped[t+1][0]], zipped[t+1][1].replace('\n', ' '), 0 , zipped[t+1][2].replace('\n', ' ')))
+                t = t+2
+            if(t == len(zipped)):
+                break
+
+
+        driver.close()
+        driver.quit()
+        return tmp_dict
+    except Exception as e:
+        driver.close()
+        driver.quit()
+        return {"Error": e}

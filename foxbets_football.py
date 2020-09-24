@@ -22,43 +22,48 @@ base_url = 'https://nj.foxbet.com/#/american_football/competitions/8169879'
 
 def get_lines():
     driver = webdriver.Chrome(os.environ['CHROMEDRIVER_PATH'], options=chrome_options)
+    try:
     #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options
-    driver.get(base_url)
+        driver.get(base_url)
 
-    driver.implicitly_wait(2) #waits for the json to load
+        driver.implicitly_wait(2) #waits for the json to load
 
-    #eventView eventView-table_tennis
+        #eventView eventView-table_tennis
 
-    matches = driver.find_elements_by_xpath(".//section[contains(@class,'afEvt eventView')]")
-    #match = matches[0]
-    return_dict = {}
+        matches = driver.find_elements_by_xpath(".//section[contains(@class,'afEvt eventView')]")
+        #match = matches[0]
+        return_dict = {}
 
-    for match in matches:
-        time = match.find_element_by_xpath(".//em[@class='match-time']").text
+        for match in matches:
+            time = match.find_element_by_xpath(".//em[@class='match-time']").text
 
-        date = match.find_element_by_xpath(".//span[@class='match-time__date']").get_attribute('innerHTML')[:-2].upper()
-        if(date not in return_dict.keys()):
-            return_dict[date] = {}
+            date = match.find_element_by_xpath(".//span[@class='match-time__date']").get_attribute('innerHTML')[:-2].upper()
+            if(date not in return_dict.keys()):
+                return_dict[date] = {}
 
-        markets = match.find_elements_by_xpath(".//div[@class='afEvt__teamMarkets']")
-        len(markets)
+            markets = match.find_elements_by_xpath(".//div[@class='afEvt__teamMarkets']")
+            len(markets)
 
-        m1_children = markets[0].find_elements_by_xpath("*")
-        m2_children = markets[1].find_elements_by_xpath("*")
+            m1_children = markets[0].find_elements_by_xpath("*")
+            m2_children = markets[1].find_elements_by_xpath("*")
 
-        m1_lines = map(lambda x: x.text.replace('\n', ' '), m1_children)
-        m2_lines = map(lambda x: x.text.replace('\n', ' '), m2_children)
+            m1_lines = map(lambda x: x.text.replace('\n', ' '), m1_children)
+            m2_lines = map(lambda x: x.text.replace('\n', ' '), m2_children)
 
-        names = match.find_elements_by_xpath(".//span[@class='teamName']")
+            names = match.find_elements_by_xpath(".//span[@class='teamName']")
 
-        home = names[1].text
-        away = names[0].text
+            home = names[1].text
+            away = names[0].text
 
-        match_name = home + ' - ' + away
-        away_out = [away] + list(m1_lines)
-        home_out = [home] + list(m2_lines)
+            match_name = home + ' - ' + away
+            away_out = [away] + list(m1_lines)
+            home_out = [home] + list(m2_lines)
 
-        return_dict[date][match_name] = (home_out, away_out)
-    driver.close()
-    driver.quit()
-    return return_dict
+            return_dict[date][match_name] = (home_out, away_out)
+        driver.close()
+        driver.quit()
+        return return_dict
+    except Exception as e:
+        driver.close()
+        driver.quit()
+        return {"Error": e}

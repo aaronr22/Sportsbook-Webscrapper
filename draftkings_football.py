@@ -49,7 +49,7 @@ def get_lines():
         body_children = body.find_elements_by_xpath("*")
         
         try:
-            if('TOMORROW' in date_field):
+            if('Tomorrow' in date_field):
                 final_time = date.today()  + timedelta(days=1)
                 final_time = final_time.strftime('%b %d').upper()
             else:
