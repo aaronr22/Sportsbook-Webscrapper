@@ -28,12 +28,14 @@ def get_lines():
         driver.get(base_url)
 
         driver.implicitly_wait(2) #waits for the json to load
-        #eventView eventView-table_tennis
+        html_source = driver.page_source
+        soup = BeautifulSoup(html_source, 'html.parser')
+        driver.close()
+        driver.quit()
 
-        result_dict = {}
-        matches = driver.find_elements_by_xpath(".//div[@data-test='event']")
+        matches = soup.findAll("div", {"data-test": "event"})
         for match in matches:
-            days = match.find_element_by_xpath(".//div[@class='f1tiy9f2']").text
+            days = match.find("div", {"class": "f1tiy9f2"}).text
 
             if('d' in days):
                 i = days.index('d')
@@ -56,18 +58,15 @@ def get_lines():
                 result_dict[game_date] = {}
 
             #get team names
-            team_names = match.find_elements_by_xpath(".//div[@class='f2rhni5']")
+            team_names = match.findAll("div", {"class":'f2rhni5'})
             team1 = team_names[0].text
             team2 = team_names[1].text
 
-            odds = match.find_elements_by_xpath(".//button[@data-test='oddsButton']")
+            odds = match.findAll("button", {"data-test":'oddsButton'})
 
             team1_odds = [team1] + list(map(lambda x: x.text.replace('\n', ' ').replace('Ov', 'O').replace('Un', 'U'), odds[:3]))
             team2_odds = [team2] + list(map(lambda x: x.text.replace('\n', ' ').replace('Ov', 'O').replace('Un', 'U'), odds[3:]))
-
             result_dict[game_date][team1 + ' - ' + team2] = (team1_odds, team2_odds)
-        driver.close()
-        driver.quit()
         return result_dict
     except Exception as e:
         driver.close()

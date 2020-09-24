@@ -28,40 +28,42 @@ def get_lines():
 
         driver.implicitly_wait(2) #waits for the json to load
 
-        #eventView eventView-table_tennis
+        html_source = driver.page_source
+        soup = BeautifulSoup(html_source, 'html.parser')
+        driver.close()
+        driver.quit()
+        regex = re.compile('.*afEvt eventView.*')
+        matches = soup.findAll("section", {"class": regex})
 
-        matches = driver.find_elements_by_xpath(".//section[contains(@class,'afEvt eventView')]")
-        #match = matches[0]
+
         return_dict = {}
 
         for match in matches:
-            time = match.find_element_by_xpath(".//em[@class='match-time']").text
+            try:
+                d = match.find("span", {"class": "match-time__date"}).text[:-2].upper()
+            except:
+                d = date.today().strftime('%b %d').upper()
+            if(d not in return_dict.keys()):
+                return_dict[d] = {}
 
-            date = match.find_element_by_xpath(".//span[@class='match-time__date']").get_attribute('innerHTML')[:-2].upper()
-            if(date not in return_dict.keys()):
-                return_dict[date] = {}
+            markets = match.findAll("div", {"class":"afEvt__teamMarkets"})
 
-            markets = match.find_elements_by_xpath(".//div[@class='afEvt__teamMarkets']")
-            len(markets)
+            m1_children = markets[0].findChildren("em", {"class":['button__bet__title button__bet__title--abbreviated','selectionOdds-event']})
+            m2_children = markets[1].findChildren("em", {"class":['button__bet__title button__bet__title--abbreviated','selectionOdds-event']})
 
-            m1_children = markets[0].find_elements_by_xpath("*")
-            m2_children = markets[1].find_elements_by_xpath("*")
+            m1_lines = list(map(lambda x: x.text.strip().replace('\n', ' '), m1_children))
+            m2_lines = list(map(lambda x: x.text.strip().replace('\n', ' '), m2_children))
 
-            m1_lines = map(lambda x: x.text.replace('\n', ' '), m1_children)
-            m2_lines = map(lambda x: x.text.replace('\n', ' '), m2_children)
-
-            names = match.find_elements_by_xpath(".//span[@class='teamName']")
+            names = match.findAll("span", {"class":'teamName'})
 
             home = names[1].text
             away = names[0].text
 
             match_name = home + ' - ' + away
-            away_out = [away] + list(m1_lines)
-            home_out = [home] + list(m2_lines)
+            away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]] + [m1_lines[3] + ' '+m1_lines[4]]
+            home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]] + [m2_lines[3] + ' '+m2_lines[4]]
 
-            return_dict[date][match_name] = (home_out, away_out)
-        driver.close()
-        driver.quit()
+            return_dict[d][match_name] = (home_out, away_out)
         return return_dict
     except Exception as e:
         driver.close()
