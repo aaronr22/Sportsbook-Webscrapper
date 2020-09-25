@@ -25,7 +25,8 @@ from selenium.webdriver.chrome.options import Options
 #mobile_emulation = { "deviceName": "iPad" }
 
 chrome_options = webdriver.ChromeOptions()
-chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
+chrome_options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1')
+#chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
 chrome_options.add_argument("--example-flag")
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
@@ -33,9 +34,8 @@ chrome_options.add_argument('--remote-debugging-port=9222')
 chrome_options.add_argument('--ignore-certificate-errors')
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-dev-shm-usage')
-chrome_options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1')
-
-
+#chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
+chrome_options.binary_location = os.environ['google-chrome']
 def hasNumbers(inputString):
     if("49ers" in inputString):
         return False
