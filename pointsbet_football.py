@@ -32,7 +32,7 @@ def get_lines():
         soup = BeautifulSoup(html_source, 'html.parser')
         driver.close()
         driver.quit()
-
+        result_dict = {}
         matches = soup.findAll("div", {"data-test": "event"})
         for match in matches:
             days = match.find("div", {"class": "f1tiy9f2"}).text
