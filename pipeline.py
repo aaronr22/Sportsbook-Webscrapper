@@ -11,6 +11,7 @@ def run_pipeline():
     try:
         print("Scrapping PB...")
         pb_lines = pointsbet_football.get_lines()
+        print(pb_lines.keys())
         if "Error" in pb_lines.keys():
             print("Failed to get PB lines", pb_lines["Error"])    
     except Exception as e:
@@ -19,6 +20,7 @@ def run_pipeline():
     try:
         print("Scrapping FoxBet...")
         fb_lines = foxbets_football.get_lines()
+        print(fb_lines.keys())
         if "Error" in fb_lines.keys():
             print("Failed to get FB lines", fb_lines["Error"])
     except Exception as e:
@@ -56,9 +58,9 @@ def run_pipeline():
     try:
         print("Scrapping Bet365...")
         #bet365_lines = bet365_football.get_lines()
-        if "Error" in bet365_lines.keys():
-            print("Failed to get Bet365 lines: ", bet365_lines["Error"])
-            bet365_lines = {"Error":e}
+        #if "Error" in bet365_lines.keys():
+        #    print("Failed to get Bet365 lines: ", bet365_lines["Error"])
+        bet365_lines = {"Error":e}
     except Exception as e:
             print("Failed to get Bet365 lines: ", e)
             bet365_lines = {"Error":e}
