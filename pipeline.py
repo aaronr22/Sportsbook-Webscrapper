@@ -55,9 +55,10 @@ def run_pipeline():
         print("Failed to get R lines", e)
     try:
         print("Scrapping Bet365...")
-        bet365_lines = bet365_football.get_lines()
+        #bet365_lines = bet365_football.get_lines()
         if "Error" in bet365_lines.keys():
             print("Failed to get Bet365 lines: ", bet365_lines["Error"])
+            bet365_lines = {"Error":e}
     except Exception as e:
             print("Failed to get Bet365 lines: ", e)
             bet365_lines = {"Error":e}
