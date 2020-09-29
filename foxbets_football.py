@@ -9,7 +9,7 @@ import re
 import os
 import json
 from selenium.webdriver.chrome.options import Options
-
+from datetime import datetime, timedelta, date
 
 chrome_options = Options()  
 chrome_options.add_argument("--headless") 
@@ -34,7 +34,7 @@ def get_lines():
         driver.quit()
         regex = re.compile('.*afEvt eventView.*')
         matches = soup.findAll("section", {"class": regex})
-
+        print(len(matches))
 
         return_dict = {}
 
@@ -43,6 +43,8 @@ def get_lines():
                 d = match.find("span", {"class": "match-time__date"}).text[:-2].upper()
             except:
                 d = date.today().strftime('%b %d').upper()
+            if len(d) == 5:
+                d = d[0:4] + '0' + d[4]
             if(d not in return_dict.keys()):
                 return_dict[d] = {}
 
@@ -59,13 +61,28 @@ def get_lines():
             home = names[1].text
             away = names[0].text
 
-            match_name = home + ' - ' + away
-            away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]] + [m1_lines[3] + ' '+m1_lines[4]]
-            home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]] + [m2_lines[3] + ' '+m2_lines[4]]
+            if 'Washington' in home:
+                home = 'Washington Football Team'
+            if 'Washington' in away:
+                away = 'Washington Football Team'
 
+            match_name = home + ' - ' + away
+            if(len(m1_lines) == 5):
+                away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]] + [m1_lines[3] + ' '+m1_lines[4]]
+            elif(len(m1_lines) == 3):
+                away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]]
+            else:
+                away_out = [away] + '|'.join(m1_lines)
+            if(len(m2_lines) == 5):
+                home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]] + [m2_lines[3] + ' '+m2_lines[4]]
+            elif(len(m2_lines) == 3):
+                home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]]
+            else:
+                home_out = [home] + '|'.join(m2_lines)
             return_dict[d][match_name] = (home_out, away_out)
         return return_dict
     except Exception as e:
         driver.close()
         driver.quit()
+        print(e)
         return {"Error": e}

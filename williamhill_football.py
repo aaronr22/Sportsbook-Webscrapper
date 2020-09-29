@@ -71,6 +71,8 @@ def run_wh():
             date = match.find_element_by_xpath(".//span[@class='date underlined']").text
 
             game_date = date[:date.index(' |')]
+            if len(game_date) == 5:
+                game_date = game_date[0:4] + '0' + game_date[4]
             if(game_date not in result_dict):
                 result_dict[game_date] ={}
 

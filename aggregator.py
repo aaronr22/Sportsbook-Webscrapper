@@ -13,6 +13,7 @@ def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, be
         fd_to_dk = {}
         out_dict[date] = {}
         #convert fd to draftkings name dict
+        
         for fd_team in fd_lines[date].keys():
             try:
                 fd_to_dk[fd_team] = similar_key(fd_team, dk_lines[date].keys())[1]
@@ -36,6 +37,7 @@ def run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, be
                 try:
                     fb_val = fb_lines[date][fd_team]
                 except:
+                    print('Field not in FB')
                     fb_val = 0
             else:
                 fb_val = 0

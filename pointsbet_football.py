@@ -10,6 +10,8 @@ import os
 import json
 from selenium.webdriver.chrome.options import Options
 import datetime
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 chrome_options = Options()  
 chrome_options.add_argument("--headless") 
@@ -22,18 +24,18 @@ base_url = 'https://nj.pointsbet.com/sports/american-football/NFL'
 
 
 def get_lines():
-    driver = webdriver.Chrome(os.environ.get('CHROMEDRIVER_PATH'), options=chrome_options)
-    #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options
     try:
+        driver = webdriver.Chrome(os.environ.get('CHROMEDRIVER_PATH'), options=chrome_options)
         driver.get(base_url)
-
-        driver.implicitly_wait(2) #waits for the json to load
+        WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "mainContent")))
+        #driver.implicitly_wait(4) #waits for the json to load
         html_source = driver.page_source
         soup = BeautifulSoup(html_source, 'html.parser')
         driver.close()
         driver.quit()
         result_dict = {}
         matches = soup.findAll("div", {"data-test": "event"})
+
         for match in matches:
             days = match.find("div", {"class": "f1tiy9f2"}).text
 
@@ -71,4 +73,5 @@ def get_lines():
     except Exception as e:
         driver.close()
         driver.quit()
+        print(e)
         return {"Error": e}

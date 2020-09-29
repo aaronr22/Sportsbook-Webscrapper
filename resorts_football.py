@@ -65,6 +65,8 @@ def get_lines():
             soup = BeautifulSoup(match, features="html.parser")
             tmp_str = (soup.get_text(separator="|")).split('|')[:-1]
             date = tmp_str[2].upper()
+            if len(date) == 5:
+                date = date[0:4] + '0' + date[4]
             if (date not in master_list.keys()):
                 master_list[date] = {}
             t1 = tmp_str[0] 
@@ -91,6 +93,6 @@ def get_lines():
         driver.quit()
         return master_list
     except Exception as e:
-        driver.quit()
         driver.close()
+        driver.quit()
         return {'Error': e}
