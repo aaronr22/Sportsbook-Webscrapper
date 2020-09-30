@@ -6,11 +6,11 @@ import aggregator
 import williamhill_football
 import resorts_football 
 import bet365_football
-def run_pipeline():
+def run_pipeline(sport):
     
     try:
         print("Scrapping PB...")
-        pb_lines = pointsbet_football.get_lines()
+        pb_lines = pointsbet_football.get_lines(sport)
         print(pb_lines.keys())
         if "Error" in pb_lines.keys():
             print("Failed to get PB lines", pb_lines["Error"])    
@@ -19,7 +19,7 @@ def run_pipeline():
         print("Failed to get PB lines", e)
     try:
         print("Scrapping FoxBet...")
-        fb_lines = foxbets_football.get_lines()
+        fb_lines = foxbets_football.get_lines(sport)
         print(fb_lines.keys())
         if "Error" in fb_lines.keys():
             print("Failed to get FB lines", fb_lines["Error"])
@@ -28,19 +28,19 @@ def run_pipeline():
         print("Failed to get FB lines", e)
     try:
         print("Scrapping Draftking...")
-        dk_lines = draftkings_football.get_lines()
+        dk_lines = draftkings_football.get_lines(sport)
     except Exception as e:
         dk_lines = {'Failed':"True"}
         print("Failed to get DK lines: ", e)
     try:
         print("Scrapping Fanduel...")
-        fd_lines = fanduel_football.get_lines()
+        fd_lines = fanduel_football.get_lines(sport)
     except Exception as e:
         fd_lines = {'Failed':"True"}
         print("Failed to get FD lines", e)
     try:
         print('Scrapping William Hill...')
-        wh_lines = williamhill_football.run_wh()
+        wh_lines = williamhill_football.run_wh(sport)
         if "Error" in wh_lines.keys():
             print("Failed to get WH lines: ", wh_lines['Error'])
         print(wh_lines.keys())
@@ -50,7 +50,7 @@ def run_pipeline():
     
     try:
         print("Scrapping Resort...")
-        r_lines = resorts_football.get_lines()
+        r_lines = resorts_football.get_lines(sport)
         if "Error" in r_lines.keys():
             print("Failed to get R lines", r_lines["Error"])
     except Exception as e:
@@ -67,7 +67,10 @@ def run_pipeline():
             bet365_lines = {"Error":e}
     try:
         print('Running aggregator...')
-        html_output = aggregator.run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, bet365_lines)
+        if sport == 'NFL':
+            html_output = aggregator.run_aggregator(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, bet365_lines)
+        elif sport == 'CFB':
+            html_output = aggregator.aggregate_cfb(fd_lines, dk_lines, pb_lines, fb_lines, wh_lines, r_lines, bet365_lines)
         #print(html_output)
         return html_output
     except Exception as e:

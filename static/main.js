@@ -1,9 +1,6 @@
 (function() {
   "use strict";
 
-
-
-
   angular.module("BettingApp", ['ngSanitize']).controller("BettingController", [
     "$scope",
     "$log",
@@ -43,7 +40,11 @@
 
 
       $scope.getResults = function() {
-        $http.post('/start').success(function(results){
+        var userInput = $scope.radio;
+        if(userInput != 'NFL' && userInput != 'CFB'){
+          userInput = 'NFL'
+        }
+        $http.post('/start', {'radio': userInput}).success(function(results){
             $log.log(results);
             getOdds(results)
             $scope.lineerror = false;

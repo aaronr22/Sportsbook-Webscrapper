@@ -13,6 +13,7 @@ from time import sleep
 from selenium.webdriver.chrome.options import Options
 
 base_url = 'https://sport.resortscasino.com/sports/football/nfl/'
+base_url_cfb = 'https://sport.resortscasino.com/sports/football/ncaaf/'
 chrome_options = Options()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument("window-size=1920,1080")
@@ -20,13 +21,16 @@ chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
 
-def get_lines():
+def get_lines(sport):
 
     driver = webdriver.Chrome(os.environ['CHROMEDRIVER_PATH'], options=chrome_options)
     try:
         #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options
-        driver.get(base_url)
-
+        if sport == 'NFL':
+            driver.get(base_url)
+        elif sport == 'CFB':
+            driver.get(base_url_cfb)
+            
         driver.implicitly_wait(2) #waits for the json to load
 
         matches = driver.find_elements_by_xpath(".//div[@class='rj-ev-list__ev-card__inner']")

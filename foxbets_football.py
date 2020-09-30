@@ -18,13 +18,17 @@ chrome_options.add_argument('--no-sandbox')
 chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
 
 #url to the page we want to scrape
-base_url = 'https://nj.foxbet.com/#/american_football/competitions/8169879'
+nfl_base_url = 'https://nj.foxbet.com/#/american_football/competitions/8169879'
+cfb_base_url = 'https://nj.foxbet.com/#/american_football/competitions/8211237'
 
-def get_lines():
+def get_lines(sport):
     driver = webdriver.Chrome(os.environ['CHROMEDRIVER_PATH'], options=chrome_options)
     try:
     #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options
-        driver.get(base_url)
+        if sport == 'NFL':
+            driver.get(nfl_base_url)
+        elif sport == 'CFB':
+            driver.get(cfb_base_url)
 
         driver.implicitly_wait(2) #waits for the json to load
 
@@ -70,13 +74,13 @@ def get_lines():
             if(len(m1_lines) == 5):
                 away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]] + [m1_lines[3] + ' '+m1_lines[4]]
             elif(len(m1_lines) == 3):
-                away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]]
+                away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]] + [0]
             else:
                 away_out = [away] + '|'.join(m1_lines)
             if(len(m2_lines) == 5):
                 home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]] + [m2_lines[3] + ' '+m2_lines[4]]
             elif(len(m2_lines) == 3):
-                home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]]
+                home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]] + [0]
             else:
                 home_out = [home] + '|'.join(m2_lines)
             return_dict[d][match_name] = (home_out, away_out)

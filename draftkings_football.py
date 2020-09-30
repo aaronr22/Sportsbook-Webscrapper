@@ -18,8 +18,8 @@ chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
 
-base_url = 'https://sportsbook.draftkings.com/leagues/football/3?category=game-lines&subcategory=game'
-
+nfl_base_url = 'https://sportsbook.draftkings.com/leagues/football/3?category=game-lines&subcategory=game'
+cfb_base_url = 'https://sportsbook.draftkings.com/leagues/football/2?category=game-lines&subcategory=game'
 def parse_tuple(list_map):
     #parse first element
     try:
@@ -45,10 +45,14 @@ def get_game(tuple1, tuple2):
     return return_duct
 
 #base_url = "https://sportsbook.draftkings.com/leagues/mma/2162?category=fight-lines&subcategory=moneyline" #ufc works
-def get_lines():
+def get_lines(sport):
     driver = webdriver.Chrome(os.environ['CHROMEDRIVER_PATH'], options=chrome_options)
     #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options
-    driver.get(base_url)
+    
+    if sport == 'NFL':
+        driver.get(nfl_base_url)
+    elif sport == 'CFB':
+        driver.get(cfb_base_url)
 
     driver.implicitly_wait(2)
 

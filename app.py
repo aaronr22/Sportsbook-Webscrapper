@@ -18,13 +18,12 @@ q = Queue(connection=conn)
 
 from models import *
 
-def get_lines():
+def get_lines(radio):
     errors = []
     results = {}
-
     try:
         print('Running pipeline...')
-        results = pipeline.run_pipeline()
+        results = pipeline.run_pipeline(radio)
     except Exception as e:
         print(e)
         errors.append("Could not run pipeline")
@@ -67,8 +66,10 @@ def get_results(job_key):
 @app.route('/start', methods=["POST"])
 def pull_lines():
     from app import get_lines
-
-    job = q.enqueue_call(func=get_lines, result_ttl=5000)
+    data = json.loads(request.data.decode())
+    radio = data['radio']
+    print(radio)
+    job = q.enqueue_call(func=get_lines, args=(radio,), result_ttl=5000)
     return job.get_id()
 
 if __name__ == '__main__':

@@ -20,14 +20,17 @@ chrome_options.add_argument('--no-sandbox')
 chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_PATH')
 
 #url to the page we want to scrape
-base_url = 'https://nj.pointsbet.com/sports/american-football/NFL'
+nfl_base_url = 'https://nj.pointsbet.com/sports/american-football/NFL'
+cfb_base_url = 'https://nj.pointsbet.com/sports/american-football/NCAAF'
 
-
-def get_lines():
+def get_lines(sport):
     try:
         driver = webdriver.Chrome(os.environ.get('CHROMEDRIVER_PATH'), options=chrome_options)
-        driver.get(base_url)
-        WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.ID, "mainContent")))
+        if sport == 'NFL':
+            driver.get(nfl_base_url)
+        elif sport == 'CFB':
+            driver.get(cfb_base_url)
+        WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".f1tiy9f2")))
         #driver.implicitly_wait(4) #waits for the json to load
         html_source = driver.page_source
         soup = BeautifulSoup(html_source, 'html.parser')
@@ -35,7 +38,8 @@ def get_lines():
         driver.quit()
         result_dict = {}
         matches = soup.findAll("div", {"data-test": "event"})
-
+        if(len(matches) == 0):
+            print('No matches found')
         for match in matches:
             days = match.find("div", {"class": "f1tiy9f2"}).text
 

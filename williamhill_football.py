@@ -25,7 +25,7 @@ chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
 #url to the page we want to scrape
 base_url = 'https://www.williamhill.com/us/nj/bet/football/events/all'
 
-def run_wh():
+def run_wh(sport):
     driver = webdriver.Chrome(os.environ['CHROMEDRIVER_PATH'], options=chrome_options)
     #driver = webdriver.Chrome('/Users/arotem/Documents/bettingMay/chromedriver', options=chrome_options
     try:
@@ -36,8 +36,12 @@ def run_wh():
 
         headers = driver.find_elements_by_xpath(".//div[@class='Expander has--toggle competitionExpander']")
         driver.implicitly_wait(3)
-        if(headers[0].text[0:3] != 'NFL'):
-            headers[1].click
+        if(sport == 'NFL'):
+            if(headers[0].text[0:3] != 'NFL'):
+                headers[1].click()
+        elif(sport == 'CFB'):
+            if(headers[0].text[0:3] == 'NFL'):
+                headers[1].click()
         driver.implicitly_wait(2)
         last_height = driver.execute_script("return document.body.scrollHeight")
 

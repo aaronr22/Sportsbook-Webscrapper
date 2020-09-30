@@ -20,12 +20,16 @@ chrome_options.add_argument('--no-sandbox')
 chrome_options.binary_location = os.environ['GOOGLE_CHROME_PATH']
 
 #url to the page we want to scrape
-base_url = 'https://sportsbook.fanduel.com/sports/navigation/6227.1/13348.3'
+nfl_base_url = 'https://sportsbook.fanduel.com/sports/navigation/6227.1/13348.3'
+cfb_base_url = 'https://sportsbook.fanduel.com/sports/navigation/11070.3/11071.3'
 #base_url = "https://sportsbook.fanduel.com/sports/navigation/7287.1/9886.3" #did not work for ufc
 
-def get_lines():
+def get_lines(sport):
     driver = webdriver.Chrome(os.environ['CHROMEDRIVER_PATH'], options=chrome_options)
-    driver.get(base_url)
+    if sport == 'NFL':
+        driver.get(nfl_base_url)
+    elif sport == 'CFB':
+        driver.get(cfb_base_url)
 
     driver.implicitly_wait(2)
 
