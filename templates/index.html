@@ -29,7 +29,8 @@
       <h1>Football Lines</h1>
       <form role="form" ng-submit="getResults()">
         <label><input type="radio" ng-model="radio" name="radio" class="form-control" id="sport-box"  value='NFL'>NFL</label>
-        <input type="radio" ng-model="radio" name="radio" class="form-control" id="sport-box"  value='CFB'>CFB</label>
+        <label><input type="radio" ng-model="radio" name="radio" class="form-control" id="sport-box"  value='CFB'> CFB</label>
+        <br>
         {% raw %}
         <button type="submit" class="btn btn-primary" ng-disabled="loading">{{ submitButtonText }}</button>
         {% endraw %}
