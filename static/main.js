@@ -38,7 +38,7 @@
         poller();
       }
 
-
+      //Gets called first when the button is clicked
       $scope.getResults = function() {
         var userInput = $scope.radio;
         if(userInput != 'NFL' && userInput != 'CFB'){
@@ -56,6 +56,21 @@
             $log.log(error);
         });
       };
+
+      $scope.queryResults = function() {
+        $log.log("1")
+        var userInput = $scope.radio;
+         $log.log(userInput)
+        if(userInput != 'NFL' && userInput != 'CFB'){
+          userInput = 'NFL'
+        }
+        $http.post('/getLines', {'radio': userInput}).success(function(results){
+          $scope.dataResults = results
+        }).error(function(err){
+          $log.log(err)
+        });
+      };
+
     }
   ]);
 })();

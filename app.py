@@ -1,3 +1,6 @@
+#select lines from aggregated_lines WHERE batch_id = (SELECT batch_id from batch WHERE created_time = (select  max(created_time) from batch) AND sport = 'NFL')
+
+
 from flask import Flask, render_template, request, Markup
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -6,6 +9,7 @@ from rq.job import Job
 from worker import conn
 import json
 from flask import jsonify
+import datetime
 
 import pipeline
 
@@ -21,6 +25,16 @@ from models import *
 def get_lines(radio):
     errors = []
     results = {}
+    batch_id = datetime.datetime.utcnow().strftime("%m%d%Y%H%M%S")
+    try:
+        batch = Batch(
+            batch=batch_id,
+            sport=radio
+        )
+        db.session.add(batch) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
+        db.session.commit()
+    except Exception as e:
+        print("Could not enter new batch in the table", e)
     try:
         print('Running pipeline...')
         results = pipeline.run_pipeline(radio)
@@ -35,7 +49,13 @@ def get_lines(radio):
                 name="data",
                 lines=r_string
             )
+            agg = Aggregated(
+                batch=batch_id,
+                lines=r_string
+            )
             db.session.merge(result) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
+            db.session.commit()
+            db.session.add(agg) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
             db.session.commit()
             return result.name
         except Exception as e:
@@ -62,6 +82,23 @@ def get_results(job_key):
     else:
         return "nay", 202
 
+@app.route("/getLines", methods=['POST'])
+def get_lines_initial():
+    #TODO: add these two lines back after the button on the FE queries this 
+    data = json.loads(request.data.decode())
+    print(data)
+    
+    radio = data['radio']
+    
+    queryStr = "SELECT lines from aggregated_lines WHERE batch_id = (select batch_id from batch where sport = \'" + radio + "\' order by created_time DESC LIMIT 1);"
+    #print(queryStr)
+    
+    #result = db.engine.execute("SELECT lines from aggregated_lines WHERE batch_id = (select batch_id from batch where sport = 'NFL' order by created_time DESC LIMIT 1);")
+    result = db.engine.execute(queryStr)
+    r = result.first()
+    #print(r[0])
+    return r[0]
+    
 
 @app.route('/start', methods=["POST"])
 def pull_lines():
