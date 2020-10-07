@@ -23,10 +23,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 q = Queue(connection=conn)
-#s = Scheduler(connection=conn)
+
 from models import *
-# s = Scheduler(queue=q,connection=conn)
-s = Scheduler(queue=q)
+
+#s = Scheduler(connection=conn)
+s = Scheduler(queue=q,connection=conn)
+#s = Scheduler(queue=q)
 
 def get_lines(radio):
     errors = []
@@ -71,9 +73,7 @@ def get_lines(radio):
             return {"error": errors}
 from app import get_lines
 #job = s.enqueue_in(timedelta(minutes=5),func=get_lines, args=("NFL",), repeat=None )
-job = s.schedule(scheduled_time=datetime.datetime.utcnow(), func=get_lines, args=("NFL",), repeat=None, interval=300)
 
-print('Enqueued: ', job)
 
 @app.route('/test')
 def hello():
@@ -108,8 +108,11 @@ def get_lines_initial():
     #result = db.engine.execute("SELECT lines from aggregated_lines WHERE batch_id = (select batch_id from batch where sport = 'NFL' order by created_time DESC LIMIT 1);")
     result = db.engine.execute(queryStr)
     r = result.first()
-    #print(r[0])
-    return r[0]
+    #print(r)
+    try:
+        return r[0]
+    except:
+        return "Error querying lines"
     
 
 @app.route('/start', methods=["POST"])
@@ -122,4 +125,7 @@ def pull_lines():
     return job.get_id()
 
 if __name__ == '__main__':
+    from app import get_lines
+    job = s.schedule(scheduled_time=datetime.datetime.utcnow(), func=get_lines, args=("NFL",), interval=300, repeat=None)
+    print('Enqueued: ', job)
     app.run(use_reloader=False)
