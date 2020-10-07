@@ -7,9 +7,13 @@ import os
 from rq import Queue
 from rq.job import Job 
 from worker import conn
+
+from rq_scheduler import Scheduler
+
 import json
 from flask import jsonify
 import datetime
+from datetime import timedelta
 
 import pipeline
 
@@ -19,13 +23,16 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 q = Queue(connection=conn)
-
+#s = Scheduler(connection=conn)
 from models import *
+# s = Scheduler(queue=q,connection=conn)
+s = Scheduler(queue=q)
 
 def get_lines(radio):
     errors = []
     results = {}
     batch_id = datetime.datetime.utcnow().strftime("%m%d%Y%H%M%S")
+    print("TIME: ",batch_id)
     try:
         batch = Batch(
             batch=batch_id,
@@ -62,6 +69,11 @@ def get_lines(radio):
             print(e)
             errors.append("Unable to add item to database")
             return {"error": errors}
+from app import get_lines
+#job = s.enqueue_in(timedelta(minutes=5),func=get_lines, args=("NFL",), repeat=None )
+job = s.schedule(scheduled_time=datetime.datetime.utcnow(), func=get_lines, args=("NFL",), repeat=None, interval=300)
+
+print('Enqueued: ', job)
 
 @app.route('/test')
 def hello():
@@ -110,4 +122,4 @@ def pull_lines():
     return job.get_id()
 
 if __name__ == '__main__':
-    app.run()
+    app.run(use_reloader=False)
