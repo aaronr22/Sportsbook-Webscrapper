@@ -1,2 +1,2 @@
 web: sh heroku.sh
-worker: ./env/bin/rqscheduler 
+worker: ./.heroku/python/bin/rqscheduler
