@@ -18,13 +18,7 @@ from datetime import timedelta
 
 import pipeline
 
-import atexit
-#from apscheduler.scheduler import Scheduler
 
-def redis_test(v):
-    d = datetime.datetime.utcnow().strftime("%m%d%Y%H%M%S")
-    print("I am testing redis: ", v, d)
-    return "Success"
 
 
 
@@ -37,26 +31,6 @@ q = Queue(connection=conn)
 
 from models import *
 
-
-#s = Scheduler(queue=q,connection=conn)
-
-
-# cron = BackgroundScheduler(daemon=True)
-
-
-
-#@cron.interval_schedule(minutes=1)
-def do_job():
-    from app import redis_test
-    job = q.enqueue_call(func=redis_test, args=("CFB",))
-    print(job.get_id())
-
-@app.before_first_request
-def init_scheduler():
-    cron = BackgroundScheduler()
-    cron.add_job(do_job, 'interval', minutes=1)
-    cron.start()
-    atexit.register(lambda: cron.shutdown(wait=False))
 
 def get_lines(radio):
     errors = []
@@ -99,13 +73,6 @@ def get_lines(radio):
             print(e)
             errors.append("Unable to add item to database")
             return {"error": errors}
-# from app import get_lines
-# #job = s.enqueue_in(timedelta(minutes=5),func=get_lines, args=("NFL",), repeat=None )
-# sched = BlockingScheduler()
-
-
-
-
 
 @app.route('/test')
 def hello():
@@ -157,7 +124,4 @@ def pull_lines():
     return job.get_id()
 
 if __name__ == '__main__':
-    # from app import get_lines
-    # job = s.schedule(scheduled_time=datetime.datetime.utcnow(), func=get_lines, args=("NFL",), interval=300, repeat=None)
-    # print('Enqueued: ', job)
     app.run()

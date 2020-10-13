@@ -71,32 +71,21 @@ def get_lines(radio):
             errors.append("Unable to add item to database")
             return {"error": errors}
 
-#get_lines("CFB")
-# result = db.execute("SELECT * from aggregated_lines")
-# for r in result:
-#     print(r)
+
 def redis_test(v):
     d = datetime.datetime.utcnow().strftime("%m%d%Y%H%M%S")
     print("I am testing redis: ", v, d)
     return "Success"
 
-#@sched.scheduled_job('interval', minutes=2)
-
 def timed_job():
-    print(3)
     from app import get_lines
     print('Scheduling...')
     job = q.enqueue_call(func=get_lines, args=("CFB",))
     job2 = q.enqueue_call(func=get_lines, args=("NFL",))
-    print(job.get_id(), job2.get_id)
+    print(job.get_id(), job2.get_id())
 
-print(1)
+
 sched.add_job(timed_job)
-sched.add_job(timed_job, 'interval', minutes=10)
-print(2)
+sched.add_job(timed_job, 'interval', minutes=15)
+
 sched.start()
-#from app import redis_test
-# if __name__ == '__main__':
-#     from clock import get_lines
-#     job = q.enqueue_call(func=get_lines, args=("CFB",), result_ttl=5000)
-#     print(job.get_id())
