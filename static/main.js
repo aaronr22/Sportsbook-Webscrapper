@@ -7,7 +7,7 @@
     "$http",
     "$timeout",
     function($scope, $log, $http, $timeout) {
-      // $scope.submitButtonText = 'Submit'
+      $scope.submitButtonText = 'Submit'
       // $scope.loading = false;
       // $scope.lineerror = false;
       // function getOdds(jobID) {
@@ -44,7 +44,7 @@
       //   if(userInput != 'NFL' && userInput != 'CFB'){
       //     userInput = 'NFL'
       //   }
-      //   $http.post('/get_lines', {'radio': userInput}).success(function(results){
+      //   $http.post('/start', {'radio': userInput}).success(function(results){
       //       $log.log(results);
       //       getOdds(results)
       //       $scope.lineerror = false;
@@ -64,7 +64,7 @@
         if(userInput != 'NFL' && userInput != 'CFB'){
           userInput = 'NFL'
         }
-        $http.post('/start', {'radio': userInput}).success(function(results){
+        $http.post('/getLines', {'radio': userInput}).success(function(results){
           $scope.dataResults = results
         }).error(function(err){
           $log.log(err)
