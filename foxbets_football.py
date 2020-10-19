@@ -10,6 +10,8 @@ import os
 import json
 from selenium.webdriver.chrome.options import Options
 from datetime import datetime, timedelta, date
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 
 chrome_options = Options()  
 chrome_options.add_argument("--headless") 
@@ -31,7 +33,8 @@ def get_lines(sport):
             driver.get(cfb_base_url)
 
         driver.implicitly_wait(2) #waits for the json to load
-
+        WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".teamName")))
+        driver.implicitly_wait(3)
         html_source = driver.page_source
         soup = BeautifulSoup(html_source, 'html.parser')
         driver.close()
@@ -75,14 +78,19 @@ def get_lines(sport):
                 away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]] + [m1_lines[3] + ' '+m1_lines[4]]
             elif(len(m1_lines) == 3):
                 away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [m1_lines[2]] + [0]
+            elif(len(m1_lines) == 4):
+                away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [0] + [m1_lines[2] + ' ' + m1_lines[3]] 
             else:
-                away_out = [away] + '|'.join(m1_lines)
+                print(m1_lines)
+                away_out = [away] + ['|'.join(m1_lines)]
             if(len(m2_lines) == 5):
                 home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]] + [m2_lines[3] + ' '+m2_lines[4]]
             elif(len(m2_lines) == 3):
                 home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]] + [0]
+            elif(len(m2_lines) == 4):
+                home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] +[0] + [m2_lines[2]+ m2_lines[3]] 
             else:
-                home_out = [home] + '|'.join(m2_lines)
+                home_out = [home] + ['|'.join(m2_lines)]
             return_dict[d][match_name] = (home_out, away_out)
         return return_dict
     except Exception as e:
