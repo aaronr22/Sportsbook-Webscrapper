@@ -37,15 +37,7 @@ def get_lines(radio):
     results = {}
     batch_id = datetime.datetime.utcnow().strftime("%m%d%Y%H%M%S")
     print("TIME: ",batch_id)
-    try:
-        batch = Batch(
-            batch=batch_id,
-            sport=radio
-        )
-        db.session.add(batch) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
-        db.session.commit()
-    except Exception as e:
-        print("Could not enter new batch in the table", e)
+
     try:
         print('Running pipeline...')
         results = pipeline.run_pipeline(radio)
@@ -56,23 +48,33 @@ def get_lines(radio):
         print('In not empty...')
         r_string = json.dumps(results)
         try:
-            result = Result(
-                name="data",
-                lines=r_string
-            )
-            agg = Aggregated(
+            batch = Batch(
                 batch=batch_id,
-                lines=r_string
+                sport=radio
             )
-            db.session.merge(result) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
+            db.session.add(batch) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
             db.session.commit()
-            db.session.add(agg) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
-            db.session.commit()
-            return result.name
+        
+            try:
+                result = Result(
+                    name="data",
+                    lines=r_string
+                )
+                agg = Aggregated(
+                    batch=batch_id,
+                    lines=r_string
+                )
+                db.session.merge(result) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
+                db.session.commit()
+                db.session.add(agg) #CHANGE TO ADD IF WE ARE DOING A NEW INSERT EACH TIME
+                db.session.commit()
+                return result.name
+            except Exception as e:
+                print(e)
+                errors.append("Unable to add item to database")
+                return {"error": errors}
         except Exception as e:
-            print(e)
-            errors.append("Unable to add item to database")
-            return {"error": errors}
+            print("Could not enter new batch in the table, therefore no results added", e)
 
 @app.route('/test')
 def hello():
