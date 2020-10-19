@@ -55,3 +55,6 @@ docs/_build/
 *.DS_Store
 
 __pycache__/
+
+
+migrations-old/

@@ -62,3 +62,18 @@ class Aggregated(db.Model):
 
     def __repr__(self):
         return 'batch {}'.format(self.batch_id)
+
+class BookRecords(db.Model):
+    __tablename__ = 'book_records'
+
+    id = db.Column(db.Integer, primary_key=True)
+    created_time = db.Column(DateTime, default=datetime.datetime.utcnow)
+    book = db.Column(db.String())
+    lines = db.Column(db.String())
+
+    def __init__(self, book, lines):
+        self.book = book
+        self.lines = lines
+
+    def __repr__(self):
+        return 'book {}'.format(book)
