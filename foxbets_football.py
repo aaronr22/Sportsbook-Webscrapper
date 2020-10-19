@@ -82,7 +82,7 @@ def get_lines(sport):
                 away_out = [away] + [m1_lines[0] + ' '+m1_lines[1]] + [0] + [m1_lines[2] + ' ' + m1_lines[3]] 
             else:
                 print(m1_lines)
-                away_out = [away] + ['|'.join(m1_lines)]
+                away_out = [away] + ['|'.join(m1_lines)]+ [0] + [0]
             if(len(m2_lines) == 5):
                 home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] + [m2_lines[2]] + [m2_lines[3] + ' '+m2_lines[4]]
             elif(len(m2_lines) == 3):
@@ -90,7 +90,7 @@ def get_lines(sport):
             elif(len(m2_lines) == 4):
                 home_out = [home] + [m2_lines[0] + ' '+m2_lines[1]] +[0] + [m2_lines[2]+ m2_lines[3]] 
             else:
-                home_out = [home] + ['|'.join(m2_lines)]
+                home_out = [home] + ['|'.join(m2_lines)] + [0] + [0]
             return_dict[d][match_name] = (home_out, away_out)
         return return_dict
     except Exception as e:
