@@ -15,13 +15,14 @@ import datetime
 import json
 
 
-from models import *
+
 
 engine = create_engine(os.environ['DATABASE_URL'])
 Session = sessionmaker(bind=engine)
 session = Session()
 
 def publish_to_db(book, lines):
+    from models import BookRecords
     try:
         result = BookRecords(
             book=book,
